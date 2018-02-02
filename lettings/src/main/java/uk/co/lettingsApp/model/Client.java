@@ -20,6 +20,6 @@ public class Client {
 	private String name;
 
 	@OneToMany(mappedBy = "client")
-	private List<Property> properties;
+	private List<Tenancy> tenancies;
 
 }

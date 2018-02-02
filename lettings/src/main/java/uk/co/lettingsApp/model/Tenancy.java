@@ -10,7 +10,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tblTenancy")
-public class Tenancy {
+public class Tenancy extends Property {
+
+	public Tenancy(String name, String postCode) {
+		super(name, postCode);
+	}
+
 	@Id
 	@Column(name = "id")
 	@GeneratedValue
@@ -29,7 +34,6 @@ public class Tenancy {
 	private boolean status;
 
 	@ManyToOne
-	@JoinColumn(name = "property_id")
-	private Property property;
-
+	@JoinColumn(name = "client")
+	private Client client;
 }
