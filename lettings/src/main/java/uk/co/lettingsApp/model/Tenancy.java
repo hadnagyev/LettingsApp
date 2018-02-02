@@ -16,20 +16,20 @@ public class Tenancy {
 	@GeneratedValue
 	private Long id;
 
-	@Column(name = "name")
-	private String name;
-	
+	@Column(name = "address")
+	private String address;
+
 	@Column(name = "rent_per_month")
 	private double rentPerMonth;
-	
+
 	@Column(name = "tenancy_term")
 	private short tenancyTerm;
-	
+
 	@Column(name = "status")
 	private boolean status;
 
 	@ManyToOne
-	@JoinColumn(name="property_id")
+	@JoinColumn(name = "property_id")
 	private Property property;
 
 }

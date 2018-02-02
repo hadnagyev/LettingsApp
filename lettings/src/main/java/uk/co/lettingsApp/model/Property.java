@@ -1,8 +1,6 @@
 package uk.co.lettingsApp.model;
 
-import java.util.List;
 import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,13 +18,17 @@ public class Property {
 	@GeneratedValue
 	private Long id;
 
+	@Column(name = "name")
+	private String name;
+
 	@Column(name = "postCode")
 	private String postCode;
-	@ManyToOne
-	@JoinColumn(name = "Client")
-	private Client client;
 	
-	@OneToMany(mappedBy="property")
+	@ManyToOne
+	@JoinColumn(name = "client")
+	private Client client;
+
+	@OneToMany(mappedBy = "property")
 	private Set<Tenancy> tenancies;
 
 }

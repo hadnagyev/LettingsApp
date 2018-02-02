@@ -3,7 +3,6 @@ package uk.co.lettingsApp.model;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -17,7 +16,10 @@ public class Client {
 	@GeneratedValue
 	private Long id;
 
-	@OneToMany(mappedBy="client")
+	@Column(name = "name")
+	private String name;
+
+	@OneToMany(mappedBy = "client")
 	private List<Property> properties;
 
 }
