@@ -1,32 +1,24 @@
 package uk.co.lettingsApp.model;
 
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@MappedSuperclass
+@Entity
+@Table(name = "tblProperty")
 public class Property {
+
+	@Id
+	@Column(name = "id")
+	@GeneratedValue
+	private Long id;
+
+	@Column(name = "name")
 	private String name;
+
+	@Column(name = "post_code")
 	private String postCode;
-
-	public Property(String name, String postCode) {
-		super();
-		this.name = name;
-		this.postCode = postCode;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getPostCode() {
-		return postCode;
-	}
-
-	public void setPostCode(String postCode) {
-		this.postCode = postCode;
-	}
 
 }
