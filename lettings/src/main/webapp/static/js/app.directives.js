@@ -1,0 +1,1 @@
+var lettingsApp = angular.module('lettingsApp.directives', []);

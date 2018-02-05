@@ -23,4 +23,9 @@ public class JpaClientService implements ClientService {
 	public Client findOne(Long id) {
 		return clientRepository.findOne(id);
 	}
+
+	@Override
+	public List<Object[]> propertySumPerClient() {
+		return clientRepository.propertySumPerClient();
+	}
 }

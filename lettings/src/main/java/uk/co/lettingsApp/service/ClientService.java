@@ -5,5 +5,9 @@ import uk.co.lettingsApp.model.Client;
 
 public interface ClientService {
 	List<Client> findAll();
+
 	Client findOne(Long id);
+
+	List<Object[]> propertySumPerClient();
+
 }

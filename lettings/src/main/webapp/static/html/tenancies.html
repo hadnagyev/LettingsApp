@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+this is tenencies - routing test
+
+<table class="table table-bordered" ng-init="getTenancies()">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Address</th>
+			<th>Client name</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="tenancy in tenancies">
+			<td>{{ tenancy.id }}</td>
+			<td>{{ tenancy.address }}</td>
+			<td>{{ tenancy.client.name }}</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
